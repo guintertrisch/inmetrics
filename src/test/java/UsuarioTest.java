@@ -6,7 +6,7 @@ public class UsuarioTest extends BaseTest {
     public void deveCadatrarUsuarioComSucesso() {
         Usuario usuario = new Usuario(driver);
         usuario.clicarEmCadastrese();
-        usuario.inserirNomeUsuario(nomeNovo);
+        usuario.inserirNomeUsuario(NOME_NOVO);
         usuario.inserirSenha("teste123");
         usuario.inserirConfirmacaoDeSenha("teste123");
         usuario.clicarEmCadastrar();
