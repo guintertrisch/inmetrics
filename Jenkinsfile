@@ -4,10 +4,15 @@ pipeline {
     stages {
         stage('Test Functional') {
             steps{
-                bat "mvn -Dtest=FuncionarioTest test"
+                bat "mvn clean -Dtest=LoginTest test"
+            }
+            steps{
+                 bat "mvn clean -Dtest=UsuarioTest test"
+            }
+            steps{
+                 bat "mvn clean -Dtest=FuncionarioTest test"
             }
         }
-
     }
 }
 
