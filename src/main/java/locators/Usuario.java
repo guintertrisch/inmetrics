@@ -11,8 +11,8 @@ public class Usuario {
     private By usuario = By.name("username");
     private By senha = By.name("pass");
     private By confirmarSenha = By.name("confirmpass");
-    private By botaoCadastrar = By.xpath("/html/body/div/div/div/form/div[7]/button");
-    private By labelUsuarioJaCadastrado = By.xpath("/html/body/div/div/div/form/div[1]/span/div");
+    private By botaoCadastrar = By.cssSelector("button[class=\"login100-form-btn\"]");
+    private By labelUsuarioJaCadastrado = By.xpath("//div[contains(text(),\"Usuário já cadastrado\")]");
     private By botaoCadastrese = By.linkText("Cadastre-se");
 
     public Usuario(WebDriver driver) {
