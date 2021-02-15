@@ -13,6 +13,7 @@ public class Usuario {
     private By confirmarSenha = By.name("confirmpass");
     private By botaoCadastrar = By.cssSelector("button[class=\"login100-form-btn\"]");
     private By labelUsuarioJaCadastrado = By.xpath("//div[contains(text(),\"Usuário já cadastrado\")]");
+    private By labelLogin = By.cssSelector("span[class=\"login100-form-title p-b-1\"]");
     private By botaoCadastrese = By.linkText("Cadastre-se");
 
     public Usuario(WebDriver driver) {
@@ -21,6 +22,10 @@ public class Usuario {
 
     private WebElement linkCadastrese() {
         return wait.until(ExpectedConditions.presenceOfElementLocated(botaoCadastrese));
+    }
+
+    private WebElement labelLogin() {
+        return wait.until(ExpectedConditions.presenceOfElementLocated(labelLogin));
     }
 
     private WebElement usuario() {
@@ -65,5 +70,9 @@ public class Usuario {
 
     public String retornaLabelUsuarioJaCadastrado() {
         return labelUsuarioJaCadastrado().getText();
+    }
+
+    public String retornaLabelLogin() {
+        return labelLogin().getText();
     }
 }

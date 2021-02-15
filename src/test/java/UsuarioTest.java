@@ -2,6 +2,8 @@ import dataprovider.UsuarioProvider;
 import locators.Usuario;
 import org.testng.annotations.Test;
 
+import static org.testng.Assert.assertEquals;
+
 public class UsuarioTest extends BaseTest {
 
     @Test(dataProvider = "dados_usuarios", dataProviderClass = UsuarioProvider.class)
@@ -12,6 +14,6 @@ public class UsuarioTest extends BaseTest {
         usuario.inserirSenha(senha);
         usuario.inserirConfirmacaoDeSenha(senha);
         usuario.clicarEmCadastrar();
-
+        assertEquals(usuario.retornaLabelLogin(), "Login");
     }
 }
